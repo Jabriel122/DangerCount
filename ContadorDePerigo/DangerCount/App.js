@@ -1,8 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { Container, ContainerNivel } from './src/components/Container/Container';
+import { Container, ContainerNivel,ContainerBtn } from './src/components/Container/Container';
 import { useState } from 'react';
 import { TextNivel } from './src/components/Text/Text';
+import { GenericButton, GenericButtonAdd, GenericButtonLess } from './src/components/Button/styleBtn';
 
 export default function App() {
   const [count, setCount] = useState(0)
@@ -44,19 +45,28 @@ export default function App() {
 
   return (
     <Container>
+      {/* Header?  */}
       <ContainerNivel>
         <TextNivel> {nivelText} </TextNivel>
       </ContainerNivel>
       <Text>{count}</Text>
-      <TouchableOpacity onPressIn={Adicionar}>
-        <Text> Adicionar</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPressIn={Subtrair} >
-        <Text> Subtrair</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPressIn={Zerar} >
+
+    {/* ScreenHome? Botões que adciona ou subtrai  */}
+      <ContainerBtn>
+        <GenericButtonAdd onPressIn={Adicionar}>
+          <Text> Adicionar</Text>
+        </GenericButtonAdd>
+        <GenericButtonLess onPressIn={Subtrair} >
+          <Text> Subtrair</Text>
+        </GenericButtonLess>
+      </ContainerBtn>
+      <GenericButton onPressIn={Zerar} >
         <Text> Zerar</Text>
-      </TouchableOpacity>
+      </GenericButton>
+
+      {/* Footer? Explicando  */}
+      
+
       <StatusBar style="auto" />
     </Container>
   );
