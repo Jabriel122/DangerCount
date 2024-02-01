@@ -1,71 +1,90 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { Container, ContainerNivel,ContainerBtn } from './src/components/Container/Container';
+import { Container } from './Container';
 import { useState } from 'react';
-import { TextNivel } from './src/components/Text/Text';
-import { GenericButton, GenericButtonAdd, GenericButtonLess } from './src/components/Button/styleBtn';
+import { Footer } from './src/components/Footer';
+import { Header } from './src/components/Header';
+import { Home } from './src/components/Screen/Home';
 
 export default function App() {
   const [count, setCount] = useState(0)
   const [nivelText, setNivelText] = useState('')
+  const [explainText, setExplainText] = useState('')
 
-  const Adicionar = () => {
+  function Adicionar () {
     if (count < 25) {
       setCount(count + 1)
       NivelChange()
+      ExplainChange()
     }
 
   }
 
-
-  const Subtrair = () => {
+  function Subtrair() {
     if (count > 0) {
       setCount(count - 1)
       NivelChange()
+      ExplainChange()
     }
 
   }
-  const Zerar = () => {
+  function Zerar() {
+    if (count > 0) {
     setCount(count * 0)
+    NivelChange()
+    ExplainChange()
+    }
   }
 
   const NivelChange = () => {
-    if (count < 5) {
+    if (count < 4) {
       setNivelText('TERRIVEL')
-    } else if (count > 5 && count < 10) {
+    } else if ( count < 10) {
       setNivelText('RUIM')
-    } else if (count > 10 && count < 15) {
+    } else if ( count < 15) {
       setNivelText('MEDIANO')
-    } else if (count > 15 && count < 20) {
+    } else if ( count < 20) {
       setNivelText('BOM')
-    } else if (count > 20) {
+    } else if (count < 25) {
       setNivelText('MUITO BOM')
-    }
+    } 
+  }
+
+  const ExplainChange = () =>{
+    if(count < 5){
+      setExplainText("A confiaça que antes você tinha com a polica foi pro caralho")
+    } else if ( count < 10) {
+      setExplainText('A Confiaça está quase indo para o caralho')
+    } else if ( count < 15) {
+      setExplainText('Tamo okay')
+    } else if ( count < 20) {
+      setExplainText('Cara você é até que confiavel')
+    } else if (count < 25) {
+      setExplainText('As conversas que vocês tiveram elevou a confiança ao máximo. Agora poderão explorar a delegacia a vontade, mas cuidado tudo isso pode ser que nem pisar em um vidro quebrado, um passo em falso e tudo que construiu pode ir para vala')
+    } 
   }
 
   return (
     <Container>
       {/* Header?  */}
-      <ContainerNivel>
-        <TextNivel> {nivelText} </TextNivel>
-      </ContainerNivel>
-      <Text>{count}</Text>
+      
+      <Header
+        nivelText={nivelText}
+        count={count}
+      />
+
+
 
     {/* ScreenHome? Botões que adciona ou subtrai  */}
-      <ContainerBtn>
-        <GenericButtonAdd onPressIn={Adicionar}>
-          <Text> Adicionar</Text>
-        </GenericButtonAdd>
-        <GenericButtonLess onPressIn={Subtrair} >
-          <Text> Subtrair</Text>
-        </GenericButtonLess>
-      </ContainerBtn>
-      <GenericButton onPressIn={Zerar} >
-        <Text> Zerar</Text>
-      </GenericButton>
+      <Home
+        plusOne={() => Adicionar()}
+        minusOne={() => Subtrair()}
+        zero={() =>Zerar()}
+      />
 
       {/* Footer? Explicando  */}
-      
+      <Footer
+      explainText={explainText}
+      />
 
       <StatusBar style="auto" />
     </Container>

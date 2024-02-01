@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+export const ContainerBtn = styled.View`
+    margin: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    /* border: 1px blue; */
+    width: 80%;    
+`
+
 export const GenericButton = styled.TouchableOpacity`
     border: 1px black;
     border-radius: 10px;
@@ -16,4 +25,8 @@ export const GenericButtonAdd = styled(GenericButton)`
 
 export const GenericButtonLess = styled(GenericButton)`
     background-color: #E65459;
+`
+
+export const TextBtn = styled.Text`
+    font-size: 30px;
 `
