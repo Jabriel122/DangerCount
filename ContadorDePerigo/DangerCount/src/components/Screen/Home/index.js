@@ -1,4 +1,4 @@
-import { ContainerBtn,GenericButton,GenericButtonAdd,GenericButtonLess, TextBtn } from "./style";
+import { ContainerBtn,GenericButton,GenericButtonAdd,GenericButtonLess, TextBtn, TextBtnAdd, TextBtnLess } from "./style";
 
 export const Home = ({plusOne,minusOne, zero}) => {
 
@@ -10,10 +10,10 @@ export const Home = ({plusOne,minusOne, zero}) => {
         <>
             <ContainerBtn>
                 <GenericButtonAdd onPressIn={plusOne}>
-                    <TextBtn> + </TextBtn>
+                    <TextBtnAdd> + </TextBtnAdd>
                 </GenericButtonAdd>
                 <GenericButtonLess onPressIn={minusOne} >
-                    <TextBtn> - </TextBtn>
+                    <TextBtnLess> - </TextBtnLess>
                 </GenericButtonLess>
             </ContainerBtn>
             <GenericButton onPressIn={zero} >
