@@ -30,7 +30,7 @@ export const GenericButtonAdd = styled(GenericButton)`
 `
 
 export const GenericButtonLess = styled(GenericButton)`
-    background-color: #E65450;
+    background-color: #F3AFB3;
 `
 
 export const TextBtn = styled.Text`

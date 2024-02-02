@@ -9,7 +9,7 @@ export const ScrollExplain = styled.View`
     padding: 20px;
     margin: 20px;
     border-radius: 0px 0px 5px 5px;
-    background-color: white;
+    background-color: #F5A19E;
 
     box-shadow: 0px 0px 10px  black;
     shadow-color: black;

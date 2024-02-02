@@ -9,12 +9,18 @@ export default function App() {
   const [count, setCount] = useState(0)
   const [nivelText, setNivelText] = useState('')
   const [explainText, setExplainText] = useState('')
+  const [theme,setTheme] = useState("terrivel")
+
+  const ThemeChange = () =>{
+      theme == count < 5 ? setTheme('terrivel') : count < 10 ? setTheme('ruim') : count < 15 ? setTheme('normal') : count < 20 ? setTheme('bom') : setTheme('muito bom')
+  }
 
   function Adicionar () {
     if (count < 25) {
       setCount(count + 1)
       NivelChange()
       ExplainChange()
+      ThemeChange()
     }
 
   }
@@ -24,6 +30,7 @@ export default function App() {
       setCount(count - 1)
       NivelChange()
       ExplainChange()
+      ThemeChange()
     }
 
   }
@@ -32,6 +39,7 @@ export default function App() {
     setCount(count * 0)
     NivelChange()
     ExplainChange()
+    ThemeChange()
     }
   }
 
@@ -70,6 +78,7 @@ export default function App() {
       <Header
         nivelText={nivelText}
         count={count}
+        theme={theme}
       />
 
 
