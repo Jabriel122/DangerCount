@@ -9,7 +9,7 @@ export const ScrollExplain = styled.View`
     padding: 20px;
     margin: 20px;
     border-radius: 0px 0px 5px 5px;
-    background-color: #F5A19E;
+    background-color: ${props => `${props.theme}`};
 
     box-shadow: 0px 0px 10px  black;
     shadow-color: black;
@@ -21,4 +21,5 @@ export const ScrollExplain = styled.View`
 
 export const TextExplain = styled.Text`
     font-weight: 500;
+    color: ${props => `${props.color}` };
 `

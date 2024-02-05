@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.View`
-    background-color: black;
+    background-color: ${props => `${props.theme}` };
     flex: 1;
     justify-content: center;
     align-items: center;

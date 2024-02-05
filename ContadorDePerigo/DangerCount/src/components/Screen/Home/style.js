@@ -26,11 +26,11 @@ export const GenericButton = styled.TouchableOpacity`
 `
 
 export const GenericButtonAdd = styled(GenericButton)`
-    background-color: #C1EAC4;
+    background-color: #2ECC71;
 `
 
 export const GenericButtonLess = styled(GenericButton)`
-    background-color: #F3AFB3;
+    background-color: #FF5733;
 `
 
 export const TextBtn = styled.Text`
@@ -42,5 +42,5 @@ export const TextBtnAdd = styled(TextBtn)`
 `
 
 export const TextBtnLess = styled(TextBtn)`
-    color: red;
+    color: #F3AFB3;
 `
