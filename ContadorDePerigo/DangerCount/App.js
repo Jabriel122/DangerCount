@@ -41,22 +41,22 @@ export default function App() {
   }
 
   const NivelChange = () => {
-    if (count < -15) {
+    if (count > -16 && count <= -10) {
       setNivelText('TERRIVEL');
       setTheme("#FF5733"); // Vermelho forte
       setColor("#FFFFFF"); // Letras em branco para contrastar com o vermelho
       setExplainText("A policia não acredita nenhum pouco em vocês. Talvez tenham cometido algum crime ou simplesmente desrespeitaram alguém que não deveria.");
-    } else if (count < -10) {
+    } else if (count >= -10 && count <= -5) {
       setNivelText('RUIM');
       setTheme("#F3AFB3"); // Tom suave de rosa
       setColor("#000000"); // Letras em preto para contrastar com o rosa
       setExplainText('Isto é um alerta. Cuidado com o que você fala, se não um quarto com uma grade te espera.');
-    } else if (count > -5 || count < 5 ) {
+    } else if (count > -5 && count <= 5 ) {
       setNivelText('MEDIANO');
       setTheme("#FFD700"); // Amarelo dourado
       setColor("#000000"); // Letras em preto para contrastar com o amarelo
       setExplainText('Estão indiferentes. Nada a relatar');
-    } else if (count > 10) {
+    } else if (count < 10 && count >= 5 ) {
       setNivelText('BOM');
       setTheme("#D6F4DB"); // Verde água suave
       setColor("#000000"); // Letras em preto para contrastar com o verde
