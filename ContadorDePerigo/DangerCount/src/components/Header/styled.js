@@ -30,6 +30,6 @@ export const ContainerCount = styled.View`
 `
 
 export const TextCount = styled.Text`
-    color: white;
+    color:${props => `${props.color}` };
     font-size: 40px;
 `

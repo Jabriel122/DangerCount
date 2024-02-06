@@ -15,7 +15,7 @@ export function Header({
                 <TextNivel color={color} > {nivelText} </TextNivel>
             </ContainerNivel>
             <ContainerCount>
-                <TextCount>{count}</TextCount>
+                <TextCount color={color}> {count} </TextCount>
             </ContainerCount>
 
         </>
